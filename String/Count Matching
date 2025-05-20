@@ -1,0 +1,24 @@
+    public static int get(String rulekey){
+        if(rulekey.equals("color")){
+            return 1;
+        }
+        else if(rulekey.equals("name")){
+            return 2;
+        }
+        return 0;
+    }
+    public static void CountMatching(){
+        String [][] matrix={{"phone","blue","pixel"},
+                {"computer","silver","lenova"},
+                { "phone","gold","iphone" }
+        };
+        String ruleKey="color";
+        int value=get(ruleKey);
+        int count=0;
+        for(int i=0;i<matrix.length;i++){
+            if(matrix[value][i].equals("silver")){
+                count++;
+            }
+        }
+        System.out.print(count);
+    }
