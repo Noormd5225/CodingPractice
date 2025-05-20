@@ -1,0 +1,26 @@
+ public void CountThedistinctWindowEveryKSize(){
+
+        int arr[] = {4, 1, 1}, K = 2;
+        int sum=0;
+
+        HashMap<Integer,Integer> ht=new HashMap<>();
+        for( int i=0;i<K;i++){
+            ht.put(arr[i],ht.getOrDefault(arr[i],0)+1);
+        }
+        System.out.println(ht.size());
+        for( int j=K;j<arr.length;j++){
+
+            if(ht.containsKey(arr[j-K])){
+                ht.put(arr[j-K],ht.get(arr[j-K])-1);
+                if(ht.get(arr[j-K])==0){
+                    ht.remove(arr[j-K]);
+                }
+            }else {
+                ht.put(arr[j-K],1);
+            }
+            ht.put(arr[j],ht.getOrDefault(arr[j],0)+1);
+
+            System.out.println(ht.size());
+        }
+
+    }
