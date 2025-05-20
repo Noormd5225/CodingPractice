@@ -1,0 +1,18 @@
+public static  void CheckStringSame(){
+        String word1[]={"a","cb"};
+        String word2[]={"ab","c"};
+        String goal1="";
+        String goal2="";
+        for(String x:word1){
+            goal1+=x;
+        }
+        for(String x:word2){
+            goal2+=x;
+        }
+        if(goal1.equals(goal2)){
+            System.out.println("true");
+        }
+        else {
+            System.out.println("False");
+        }
+    }
