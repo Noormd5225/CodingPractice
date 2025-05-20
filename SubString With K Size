@@ -1,0 +1,28 @@
+public void SubStringWithKSize(){
+        String str ="aabbcc";
+        int k = 2;
+        int left=0,n=str.length();
+        HashMap<Character,Integer> map=new HashMap<>();
+        int maxlength=0;
+        for (int right=0;right<n;right++)
+        {
+            if(map.containsKey(str.charAt(right))){
+                map.put(str.charAt(right),map.get(str.charAt(right))+1);
+            }
+            else{
+                map.put(str.charAt(right),1);
+            }
+            while (map.size()>k){
+                char lchar=str.charAt(left);
+                map.put(lchar,map.get(lchar)-1);
+                if(map.get(lchar)==0)
+                {
+                 map.remove(lchar);
+                }
+                left++;
+            }
+            maxlength= Math.max(maxlength,right-left+1);
+        }
+
+        System.out.println(maxlength);
+    }
