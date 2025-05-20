@@ -1,0 +1,16 @@
+ public int SumOfAllSubArrayWithKLength(){
+
+        int arr[] = {1, 2, 3, 4}, K = 2;
+        int sum=0;
+         int max=Integer.MAX_VALUE;
+        for( int i=0;i<K;i++){
+            sum+=arr[i];
+        }
+        max=Math.min(sum,max);
+       for( int j=K;j<arr.length;j++){
+           sum=arr[j]+sum-arr[j-K];
+
+           max=Math.min(sum,max);
+       }
+        return max;
+    }
