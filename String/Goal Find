@@ -1,0 +1,16 @@
+public static String GoalFind(){
+        String str="";
+        // String goal="g()(al)";
+        String goal="g()()()()()()()()()(al)";
+        for (int i=0;i<goal.length();i++){
+            if(goal.charAt(i)!='('&&goal.charAt(i)!=')') {
+                str+=goal.charAt(i);
+            } else if (goal.charAt(i)=='('&&goal.charAt(i+1)==')') {
+                str+="o";
+                i+=1;
+            }else {
+                continue;
+            }
+        }
+        return str;
+    }
