@@ -1,0 +1,18 @@
+    public List<Integer> firstNegInt(int arr[], int k) {
+        ArrayList<Integer> list = new ArrayList<>();
+        int index=0;
+
+
+        for(int i=k-1;i<arr.length;i++){
+            while(index<i&&(index<=i-k||arr[index]>=0)){
+                index++;
+            }
+            if(arr[index]<0&&index!=arr.length){
+                list.add(arr[index]);
+            }else {
+                list.add(0);
+            }
+        }
+
+        return list;
+    }
