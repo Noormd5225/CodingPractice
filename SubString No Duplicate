@@ -1,0 +1,18 @@
+ public void SubStringNoDuplicate(){
+        String s = "aaabsysssss";
+        HashSet<Character> ht=new HashSet<>();
+        int left=0,n=s.length();
+        int maxlength=0;
+        for (int right=0;right<n;right++)
+        {
+                while(ht.contains(s.charAt(right)))
+                {
+                    ht.remove(s.charAt(left));
+                    left++;
+                }
+
+            ht.add(s.charAt(right));
+            maxlength=Math.max(maxlength,ht.size());
+        }
+        System.out.println(maxlength);
+    }
