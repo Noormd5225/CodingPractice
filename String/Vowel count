@@ -1,0 +1,21 @@
+public static void CountVowels(){
+        String str="aba";
+        int start=0,end=str.length()-1;
+        int count1=0,count2=0;
+        while(start<end){
+            if(str.charAt(start)=='a'||str.charAt(start)=='e'||str.charAt(start)=='i'||str.charAt(start)=='o'||str.charAt(start)=='u'||str.charAt(start)=='A'||str.charAt(start)=='E'||str.charAt(start)=='I'||str.charAt(start)=='O'||str.charAt(start)=='U'){
+                count1++;
+            }
+            if(str.charAt(end)=='a'||str.charAt(end)=='e'||str.charAt(end)=='i'||str.charAt(end)=='o'||str.charAt(end)=='u'||str.charAt(end)=='A'||str.charAt(end)=='E'||str.charAt(end)=='I'||str.charAt(end)=='O'||str.charAt(end)=='U'){
+                count2++;
+            }
+            start++;
+            end--;
+        }
+        if(count1==count2){
+            System.out.println("True");
+        }
+        else {
+            System.out.println("False");
+        }
+    }
