@@ -1,0 +1,22 @@
+public ArrayList<Integer> maxOfSubarrays(int[] arr, int k) {
+        ArrayList<Integer> list=new ArrayList<>();
+        int right=0,left=0;
+        int n=arr.length;
+        while (right<n){
+
+            if(right-left+1<k){
+                right++;
+            }
+            else {
+
+                right++;
+                left++;
+                int max=getmax(arr,right,left);
+                list.add(max);
+
+            }
+
+        }
+
+         return list;
+    }
