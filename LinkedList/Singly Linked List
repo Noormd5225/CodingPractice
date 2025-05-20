@@ -1,0 +1,116 @@
+package org.example;
+
+public class LinkedList {
+
+
+   public class  Node{
+        int value;
+        Node next;
+       public Node(int value,Node next){
+           this.value=value;
+           this.next=next;
+       }
+
+       public Node(int value){
+           this.value=value;
+       }
+    }
+    Node head;
+    Node tail;
+    int size;
+
+   public LinkedList(){
+       this.size=0;
+    }
+
+
+
+    public void InsertAtLast(int value){
+       Node node=new Node(value);
+       if(tail!=null){
+           tail.next=node;
+
+       }
+        tail=node;
+       if(head==null){
+           head=node;
+       }
+   }
+
+   public void Display(){
+       Node temp=head;
+       while(temp!=null){
+           System.out.print(temp.value+" -> ");
+           temp=temp.next;
+       }
+       System.out.println();
+   }
+   public void DisplayHeadAndTail(){
+       System.out.println(head.value +" ");
+   }
+
+   public void  ReverseLinkedList(){
+       Node prev=null;
+       Node current=head;
+       Node nextNode=head.next;
+       while(current!=null)
+       {
+           current.next=prev;
+           prev=current;
+           current=nextNode;
+          if(nextNode!=null){
+              nextNode=nextNode.next;
+          }
+       }
+       head=prev;
+   }
+
+   public void RemoveDupplicates(){
+       Node temp=head;
+       while(temp.next!=null){
+           if(temp.value!=temp.next.value){
+               temp=temp.next;
+           }
+           else {
+               temp.next=temp.next.next;
+           }
+       }
+   }
+   public void MiddleElement(){
+       Node fast=head;
+       Node slow=head;
+       while (fast!=null&&fast.next!=null){
+
+           slow=slow.next;
+           fast=fast.next.next;
+
+       }
+       System.out.println(slow.value);
+   }
+
+   public void Palindrome(){
+
+       Node fast=head;
+       Node slow=head;
+       while (fast!=null&&fast.next!=null){
+
+           slow=slow.next;
+           fast=fast.next.next;
+
+       }
+       Node prev=null;
+       Node current=slow;
+       Node nextNode=slow.next;
+       while(current!=null)
+       {
+           current.next=prev;
+           prev=current;
+           current=nextNode;
+           if(nextNode!=null){
+               nextNode=nextNode.next;
+           }
+       }
+      // head=prev;
+      slow.next=prev;
+   }
+}
