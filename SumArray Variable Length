@@ -1,0 +1,21 @@
+public void SumArrayVariableLength(){
+        int [] nums={15, 2, 4, 8, 9, 5, 10, 23};
+        int k=23;
+         int left=0;
+          int right =0;
+          int sum=0;
+
+          int n=nums.length-1;
+          while(right<n){
+              sum+=nums[right];
+              while(sum>=k)
+              {
+                  if(sum==k){
+                      System.out.println(left+1+ " "+ ++right);
+                  }
+                  sum=sum-nums[left];
+                  left++;
+              }
+              right++;
+          }
+    }
