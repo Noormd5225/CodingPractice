@@ -1,0 +1,52 @@
+public static void SubStringIsString(){
+
+        String str="aabaabaa";
+        String comp="abaa";
+        int k=comp.length();
+        int left=0;
+        boolean flag=false;
+        int count=0;
+        HashMap<Character,Integer> map=new HashMap<>();
+        HashMap<Character,Integer> comparison=new HashMap<>();
+        for(int i=0;i<k;i++){
+            map.put(comp.charAt(i),map.getOrDefault(comp.charAt(i),0)+1);
+        }
+
+
+
+        for(int i=0;i<str.length();i++){
+
+
+            comparison.put(str.charAt(i),comparison.getOrDefault(str.charAt(i),0)+1);
+
+
+            if(i>=k){
+
+
+                comparison.put(str.charAt(i-k),comparison.get(str.charAt(i-k))-1);
+
+                if(comparison.get(str.charAt(i-k))==0){
+                    comparison.remove(str.charAt(i-k));
+                }
+
+
+
+
+            }
+
+            for(Character x:map.keySet()){
+                if(comparison.get(x)!=map.get(x))
+                {
+                    //System.out.println(x);
+                    flag=true;
+
+                }
+            }
+            if(flag){
+                flag=false;
+            }
+            else
+            {
+                count++;
+            }
+            }
