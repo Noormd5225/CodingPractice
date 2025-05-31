@@ -1,0 +1,27 @@
+ public static void Minimum(){
+        int [] nums={9, 10, 9, -7, -4, -8, 2, -6};
+        Deque<Integer> deque=new ArrayDeque<>();
+        int k=2;
+        int []  result=new  int[nums.length-k+1];
+        int x=0;
+
+        for(int i=0;i<nums.length;i++){
+
+            while (!deque.isEmpty()&&deque.peek()<i-k+1){
+                deque.poll();
+            }
+            while (!deque.isEmpty()&&nums[deque.peekLast()]>nums[i]){
+                deque.pollLast();
+            }
+
+
+            deque.offer(i);
+            if(i>=k-1){
+                result[x++]=nums[deque.peek()];
+            }
+        }
+        for(int y:result){
+            System.out.println(y);
+        }
+    }
+
