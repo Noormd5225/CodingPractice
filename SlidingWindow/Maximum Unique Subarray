@@ -1,0 +1,50 @@
+public void maximumUniqueSubarray() {
+
+        int[] nums={5,2,1,2,5,2,1,2,5};
+        int left=0;
+        int sum=0;
+        int max=Integer.MIN_VALUE;
+        HashSet<Integer> ht=new HashSet<>();
+        for(int i=0;i<nums.length;i++){
+
+
+            while(ht.contains(nums[i])){
+                ht.remove(nums[left]);
+                sum-=nums[left];
+                left++;
+            }
+
+            ht.add(nums[i]);
+            sum+=nums[i];
+            max=Math.max(max,sum);
+        }
+        System.out.println(max);
+    }
+
+
+
+public void maximumUniqueSubarray() {
+
+        int[] nums={5,2,1,2,5,2,1,2,5};
+        int left=0;
+        int sum=0;
+        int max=Integer.MIN_VALUE;
+        HashSet<Integer> ht=new HashSet<>();
+        for(int i=0;i<nums.length;i++){
+
+
+            while(ht.contains(nums[i])){
+                ht.remove(nums[left]);
+                sum-=nums[left];
+                left++;
+            }
+
+            ht.add(nums[i]);
+            sum+=nums[i];
+            max=Math.max(max,sum);
+        }
+        System.out.println(max);
+    }
+
+
+
