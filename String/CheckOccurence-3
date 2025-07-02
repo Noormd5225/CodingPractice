@@ -1,0 +1,21 @@
+	
+	    public static boolean areOccurrencesEqual(String s) {
+	    	int change=0;
+	    	int count=0;
+	        HashMap<Character,Integer> ht=new HashMap<>();
+	        for(int i=0;i<s.length();i++){
+	        	ht.put(s.charAt(i),ht.getOrDefault(s.charAt(i),0)+1);
+	        }
+	        for(Character x:ht.keySet()) {
+	        	if(change!=ht.get(x)) {
+	        		count++;
+	        		change=ht.get(x);
+	        	}
+	        	if(count>1) {
+	        		return false;
+	        	}
+	        }
+	        
+	     return true;   
+	    }
+	    
