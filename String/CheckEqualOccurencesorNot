@@ -1,0 +1,24 @@
+	    
+	    public static boolean ArrayareOccurrencesEqual(String s) {
+	    	int [] freq=new int[26];
+	    	for(int x=0;x<s.length();x++) {
+	    		freq[s.charAt(x)-'a']++;
+	    	}
+	    	int original=0;
+	    	for(int arr:freq) {
+	    		if(arr==0) {
+	    			continue;
+	    		}
+	    		if(original==0) {
+	    			original=arr;
+	    		}
+	    		else if(original!=arr) {
+	    			return false;
+	    			
+	    		}
+	    		
+	    	}
+	    	
+	    	return true;
+	    	
+	    }
