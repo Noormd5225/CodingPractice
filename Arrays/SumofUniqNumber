@@ -1,0 +1,17 @@
+	  public static int sumOfUnique(int[] nums) {
+		  int sum=0;
+	  
+		  HashMap<Integer,Integer>ht =new HashMap<>();
+	        for(int x:nums) {
+	        	ht.put(x,ht.getOrDefault(x,0)+1);
+	        }
+	        for(Integer hashArray:ht.keySet()) {
+	        	if(ht.get(hashArray)==1) 
+	        	{
+	        		
+	        		sum+=hashArray;
+	        	}
+	        }
+		  
+		  return sum;
+	    }
