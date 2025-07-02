@@ -1,0 +1,16 @@
+		
+	    public static boolean HsahareOccurrencesEqual(String s) {
+	    	HashSet<Integer> hs=new HashSet<>();
+	        HashMap<Character,Integer> ht=new HashMap<>();
+	        for(int i=0;i<s.length();i++){
+	        	ht.put(s.charAt(i),ht.getOrDefault(s.charAt(i),0)+1);
+	        }
+	        for(Character x:ht.keySet()) {
+	        	hs.add(ht.get(x));
+	        	
+	        }
+	        
+	     return hs.size()==1;   
+	    }
+	
+	
