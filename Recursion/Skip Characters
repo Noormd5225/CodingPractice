@@ -1,0 +1,12 @@
+    
+    static String Skip(String ch,String str){
+        if(str==""){
+            return ch;
+        }
+        
+        char value=str.charAt(0);
+        if(value!='a'){
+            return Skip(ch+value,str.substring(1));
+        }
+        return Skip(ch,str.substring(1));
+    }
