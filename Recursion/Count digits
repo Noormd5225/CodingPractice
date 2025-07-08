@@ -1,0 +1,7 @@
+    
+        static int countofdigits(int sum,int n){
+        if(n==0){
+            return sum;
+        }
+        return countofdigits(sum+1,n/10);
+    }
