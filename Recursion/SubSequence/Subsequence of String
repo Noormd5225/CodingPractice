@@ -1,0 +1,14 @@
+    public static void Subsequence(String str,String ch){
+        int count=0;
+        if(str.equals(""))
+    {
+        count++;
+        System.out.println(ch+" "+count);
+        
+      return;
+    }
+        char character=str.charAt(0);
+         Subsequence(str.substring(1),ch);
+     Subsequence(str.substring(1),ch+character);
+
+    }
